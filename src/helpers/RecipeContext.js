@@ -12,10 +12,10 @@ const initialState = {
 };
 
 // create global app context
-const RecipeContext = createContext(initialState);
+export const RecipeContext = createContext(initialState);
 
 // export provider components
-const RecipeProvider = (props) => {
+export const RecipeProvider = (props) => {
   const [state, dispatch] = useReducer(RecipeReducer, initialState);
 
   useEffect(() => {
