@@ -36,7 +36,7 @@ export default function useFetchRecipes(query) {
   useEffect(() => {
     const fetchNewData = () => {
       dispatch({ type: ACTIONS.MAKE_REQUEST });
-      fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${query}`)
+      fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
         .then((res) => res.json())
         .then((data) => {
           if (data.meals === null) {
