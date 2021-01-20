@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { RecipeProvider } from "./helpers/RecipeContext";
+import { RecipeListProvider } from "./helpers/RecipeListContext";
 import Navbar from "./components/Navbar";
 import YourRecipes from "./components/YourRecipes";
 import FinishedRecipes from "./components/FinishedRecipes";
@@ -9,7 +9,7 @@ import SearchRecipes from "./components/SearchRecipes";
 function App() {
   return (
     <div className="App">
-      <RecipeProvider>
+      <RecipeListProvider>
         <Router>
           <Navbar />
           <Switch>
@@ -24,7 +24,7 @@ function App() {
             </Route>
           </Switch>
         </Router>
-      </RecipeProvider>
+      </RecipeListProvider>
     </div>
   );
 }

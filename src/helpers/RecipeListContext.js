@@ -1,5 +1,5 @@
 import React, { createContext, useReducer, useEffect } from "react";
-import RecipeReducer from "./RecipeReducer";
+import RecipeListReducer from "./RecipeListReducer";
 
 // declare initial state from localstorage
 const initialState = {
@@ -15,8 +15,8 @@ const initialState = {
 export const RecipeContext = createContext(initialState);
 
 // export provider components
-export const RecipeProvider = (props) => {
-  const [state, dispatch] = useReducer(RecipeReducer, initialState);
+export const RecipeListProvider = (props) => {
+  const [state, dispatch] = useReducer(RecipeListReducer, initialState);
 
   useEffect(() => {
     localStorage.setItem("makeList", JSON.stringify(state.makeList));

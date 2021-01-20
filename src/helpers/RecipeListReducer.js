@@ -1,4 +1,4 @@
-export default (state, action) => {
+const RecipeListReducer = (state, action) => {
   switch (action.type) {
     case "ADD_RECIPE_TO_MAKE_LIST":
       return {
@@ -31,9 +31,13 @@ export default (state, action) => {
     case "REMOVE_FROM_FINISHED_LIST":
       return {
         ...state,
-        finishedList: state.finishedList.filter((recipe) => recipe.id !== action.payload),
+        finishedList: state.finishedList.filter(
+          (recipe) => recipe.id !== action.payload
+        ),
       };
     default:
       return state;
   }
 };
+
+export default RecipeListReducer;
